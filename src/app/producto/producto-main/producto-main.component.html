@@ -1,0 +1,21 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th *ngIf="this.servicioUsuario.token" scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productos">
+        <td>{{item.id}}</td>
+        <td>{{item.nombre}}</td>
+        <td *ngIf="this.servicioUsuario.token">
+          <a class="btn btn-primary" routerLink="/productos/edit/{{item.id}}">Editar</a>
+          <a class="btn btn-danger" (click)="borrarCliente(item)">Borrar</a>
+        </td>
+    </tr>
+
+  </tbody>
+</table>
